@@ -1,0 +1,144 @@
+﻿@model TransactionQuery.CSharp.Models.TransactionQueryResponse
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@section scripts {
+    <script type="text/javascript">
+  $(function () {
+    $('#StartDate').datetimepicker({
+      defaultDate: '@Model.StartDate',
+      format: 'L',
+      showClose: true,
+      showClear: true,
+      toolbarPlacement: 'top'
+    });
+  });
+
+        $(function () {
+            $('#EndDate').datetimepicker({
+                defaultDate: '@Model.EndDate',
+                format: 'L',
+                showClose: true,
+                showClear: true,
+                toolbarPlacement: 'top'
+            });
+        });
+    </script>
+}
+
+<div class="jumbotron">
+    <h1>TransactionQuery</h1>
+    <p class="lead">Search transactions by date/time and last four of card number</p>
+</div>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+
+<div class="form-group">
+    @Html.LabelFor(model => model.StartDate,
+            htmlAttributes: new { @class = "control-label col-md-3" })
+    <div class="col-md-8">
+        @Html.EditorFor(model => model.StartDate,
+            new
+            {
+                htmlAttributes = new
+                {
+                    @Value = Model.StartDate.ToString("MM/dd/yyyy"),
+                    @class = "form-control"
+                },
+            })
+        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.EndDate,
+            htmlAttributes: new { @class = "control-label col-md-3" })
+    <div class="col-md-8">
+        @Html.EditorFor(model => model.EndDate,
+            new
+            {
+                htmlAttributes = new
+                {
+                    @Value = Model.EndDate.ToString("MM/dd/yyyy"),
+                    @class = "form-control"
+                },
+            })
+        @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.LastFour,
+            htmlAttributes: new { @class = "control-label col-md-3" })
+    <div class="col-md-8">
+        @Html.EditorFor(model => model.LastFour)
+        @Html.ValidationMessageFor(model => model.LastFour, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-md-8">
+        <input type="submit" value="Get Data" />
+    </div>
+</div>
+
+    <div class="form=group">
+        <div class="col-md-8">
+            <table border="1">
+                <tr>
+                    <th>
+                        TransactionID
+                    </th>
+                    <th>
+                        Card Number
+                    </th>
+                    <th>
+                        Amount
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Time
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+                @foreach (var item in Model.Response.ReportingData.Items)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CardNumberMasked)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionStatusCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpressTransactionDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpressTransactionTime)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new {TransactionID = item.TransactionID, CardNumberMasked = item.CardNumberMasked }, null)
+                        </td>
+                    </tr>
+                }
+            </table>
+            </div>
+        </div>
+}

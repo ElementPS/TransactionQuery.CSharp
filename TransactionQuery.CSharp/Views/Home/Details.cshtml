@@ -1,0 +1,219 @@
+﻿@model TransactionQuery.CSharp.Models.Item
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron">
+    <h1>TransactionQuery</h1>
+    <p class="lead">Search transactions by date/time and last four of card number</p>
+</div>
+
+
+<div class="form=group">
+   <div class="col-md-8">
+   <table border="1">
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.TransactionID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.TransactionID)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.CardNumberMasked)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.CardNumberMasked)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.TransactionAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.TransactionAmount)
+                        </td>
+                        </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.TransactionStatusCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.TransactionStatusCode)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.ExpressTransactionDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ExpressTransactionDate)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.ExpressTransactionTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ExpressTransactionTime)
+                        </td>
+                    </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.AcceptorID)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.AcceptorID)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.AccountID)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.AccountID)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.TerminalID)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.TerminalID)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.ApplicationID)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.ApplicationID)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.ApprovalNumber)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.ApprovalNumber)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.ExpirationMonth)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.ExpirationMonth)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.ExpirationYear)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.ExpirationYear)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.ExpressResponseCode)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.ExpressResponseCode)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.ExpressResponseMessage)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.ExpressResponseMessage)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.HostResponseMessage)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.HostResponseMessage)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.ReferenceNumber)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.ReferenceNumber)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.TicketNumber)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.TicketNumber)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.TrackingID)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.TrackingID)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.TransactionStatus)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.TransactionStatus)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.TransactionType)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.TransactionType)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.CardLogo)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.CardLogo)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.CardType)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.CardType)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.TrackDataPresent)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.TrackDataPresent)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           @Html.LabelFor(model => model.TimeStamp)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(model => model.TimeStamp)
+                       </td>
+                   </tr>
+                </table>
+            </div>
+        </div>
