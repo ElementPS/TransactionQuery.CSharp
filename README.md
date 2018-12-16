@@ -12,9 +12,9 @@
 
 This repository demonstrates using the TransactionQuery Express API call to provide a mechanism to view transactions and transaction detail.  The code was compiled and tested using Microsoft Visual Studio Express 2015 for Windows Desktop.
 
-![TransactionQuery.CSharp](https://github.com/ElementPS/transationQuery.CSharp/blob/master/transactionQuery1.PNG)
+![TransactionQuery.CSharp](https://github.com/ElementPS/TransationQuery.CSharp/blob/master/TransactionQuery1.PNG)
 
-![TransactionQuery.CSharp](https://github.com/ElementPS/transationQuery.CSharp/blob/master/transactionQuery2.PNG)
+![TransactionQuery.CSharp](https://github.com/ElementPS/TransationQuery.CSharp/blob/master/TransactionQuery2.PNG)
 
 ## Prerequisites
 
